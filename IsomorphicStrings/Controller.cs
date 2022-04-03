@@ -38,6 +38,7 @@ namespace IsomorphicStrings
             Output(indexedWords);
         }
 
+        //Prints Results and outputs it to Text File in Input file's directory
         private void Output(Dictionary<string, int[]> indexedWords)
         {
             Dictionary<string, int[]> ExactIso = FindExactIsomorphs(indexedWords);
@@ -49,7 +50,15 @@ namespace IsomorphicStrings
             }
             Console.WriteLine(output);
             string rootPath = path.Substring(0, path.LastIndexOf('\\'));
-            File.WriteAllText(rootPath + "/output.txt", output);
+            try
+            {
+                File.WriteAllText(rootPath + "/output.txt", output);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Couldn't Write Output.txt to the Directory of your input file. Error: " + ex);
+            }
+
         }
 
         //Asks for File Path and returns String List of all words from list
@@ -70,14 +79,30 @@ namespace IsomorphicStrings
                     continue;
                 }
             }
-            string[] file = File.ReadAllLines(path);
-            List<string> words = file.ToList();
-            if (words.Count < 1)
+            while (true)
             {
-                Console.WriteLine("Can't Find isomorphics with under 2 words, Please import a text list with 2 or more words");
-                Environment.Exit(0); //Exit Program
+                try
+                {
+                    string[] file = File.ReadAllLines(path);
+                    List<string> words = file.ToList();
+                    if (words.Count < 1)
+                    {
+                        Console.WriteLine("Can't Find isomorphics with 1 word, Please import a text list with 2 or more words");
+                        Environment.Exit(0); //Exit Program
+                    }
+                    return words;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Couldn't Read File From Directory, Please Check your Directory and Try Again.\n Error: " + ex);
+                    Console.WriteLine("\nPlease Input The File Path");
+                    this.path = Console.ReadLine();
+                    continue;
+                }
+
             }
-            return words;
+
+
         }
 
         //Pass through list of Words, Iterates over all words and their characters and indexs them by trying to add each letter to a dictionary and if it already exists it increases the key pair int by 1.
@@ -149,7 +174,7 @@ namespace IsomorphicStrings
         }
 
         //passes through Dictionary and Find Loose Isomorphs and pairs them together
-        private (Dictionary <string, int[]>, List<string>) FindLooseIsomorphs(Dictionary<string, int[]> indexedDictionary)
+        private (Dictionary<string, int[]>, List<string>) FindLooseIsomorphs(Dictionary<string, int[]> indexedDictionary)
         {
             Dictionary<string, int[]> MatchingArrays = new();
             List<string> nonIsomorphs = new();
@@ -172,7 +197,7 @@ namespace IsomorphicStrings
                     IndexsMatched.Add(source);
                     MatchingArrays.Add(output, FindCountInArraySorted(indexedDictionary.ElementAt(source).Value));
                 }
-                else if(!IndexsMatched.Contains(source))
+                else if (!IndexsMatched.Contains(source))
                 {
                     IndexsMatched.Add(source);
                     nonIsomorphs.Add(indexedDictionary.ElementAt(source).Key);
@@ -191,13 +216,13 @@ namespace IsomorphicStrings
                 int count = 0;
                 for (int target = 0; target < IndexForString.Length; target++)
                 {
-                    if(IndexForString[source] == IndexForString[target] && !alreadyUsed.Contains(IndexForString[source]))
+                    if (IndexForString[source] == IndexForString[target] && !alreadyUsed.Contains(IndexForString[source]))
                     {
                         count++;
                     }
                 }
                 alreadyUsed.Add(IndexForString[source]);
-                if (count> 0) //don't wanna return chracters we've already compared
+                if (count > 0) //don't wanna return chracters we've already compared
                 {
                     wordCounts.Add(count);
                 }
