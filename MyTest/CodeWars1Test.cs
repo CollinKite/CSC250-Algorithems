@@ -24,7 +24,7 @@ public static class PhoneDirTests
     }
 
     [Test]
-    public static void test1()
+    public static void Test1()
     {
         Console.WriteLine("Phone");
         testing(PhoneDir.Phone(dr, "48-421-674-8974"), "Phone => 48-421-674-8974, Name => Anastasia, Address => Via Quirinal Roma");

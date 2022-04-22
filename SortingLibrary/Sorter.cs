@@ -46,7 +46,7 @@ namespace SortingLibrary
             for (int i = 1; i < arr.Length; i++)
             {
                 T value = arr[i];
-                int j = 0;
+                int j;
               
                 for (j = (i - 1); j >= 0; j--)
                 {

@@ -14,7 +14,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyTest", "MyTest\MyTest.csproj", "{8E734402-F3A4-4395-816B-FFE8695E0399}"
 	ProjectSection(ProjectDependencies) = postProject
 		{AD3D9D54-0B39-45E0-9502-19E68CA096A3} = {AD3D9D54-0B39-45E0-9502-19E68CA096A3}
-		{5302E565-4D74-4D1F-8B23-27BD8D94F43C} = {5302E565-4D74-4D1F-8B23-27BD8D94F43C}
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeWars2", "CodeWars2\CodeWars2.csproj", "{E0D367ED-4695-46B2-8E6B-68BEC35F9431}"
@@ -23,7 +22,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeWars3", "CodeWars3\Code
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "N Queens", "N Queens\N Queens.csproj", "{426AFDA8-6E99-4D55-9B27-134EB2843165}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeWars4", "CodeWars4\CodeWars4.csproj", "{5302E565-4D74-4D1F-8B23-27BD8D94F43C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeWars4", "CodeWars4\CodeWars4.csproj", "{5302E565-4D74-4D1F-8B23-27BD8D94F43C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandbox", "Sandbox\Sandbox.csproj", "{1DFFDECB-2304-4051-BEFC-84B56C14C987}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -143,6 +144,18 @@ Global
 		{5302E565-4D74-4D1F-8B23-27BD8D94F43C}.Release|x64.Build.0 = Release|Any CPU
 		{5302E565-4D74-4D1F-8B23-27BD8D94F43C}.Release|x86.ActiveCfg = Release|Any CPU
 		{5302E565-4D74-4D1F-8B23-27BD8D94F43C}.Release|x86.Build.0 = Release|Any CPU
+		{1DFFDECB-2304-4051-BEFC-84B56C14C987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DFFDECB-2304-4051-BEFC-84B56C14C987}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DFFDECB-2304-4051-BEFC-84B56C14C987}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1DFFDECB-2304-4051-BEFC-84B56C14C987}.Debug|x64.Build.0 = Debug|Any CPU
+		{1DFFDECB-2304-4051-BEFC-84B56C14C987}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1DFFDECB-2304-4051-BEFC-84B56C14C987}.Debug|x86.Build.0 = Debug|Any CPU
+		{1DFFDECB-2304-4051-BEFC-84B56C14C987}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DFFDECB-2304-4051-BEFC-84B56C14C987}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DFFDECB-2304-4051-BEFC-84B56C14C987}.Release|x64.ActiveCfg = Release|Any CPU
+		{1DFFDECB-2304-4051-BEFC-84B56C14C987}.Release|x64.Build.0 = Release|Any CPU
+		{1DFFDECB-2304-4051-BEFC-84B56C14C987}.Release|x86.ActiveCfg = Release|Any CPU
+		{1DFFDECB-2304-4051-BEFC-84B56C14C987}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
