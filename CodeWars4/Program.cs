@@ -20,78 +20,22 @@ namespace CodeWars4
                 orderedWeights.Add(new Weight(weights[i]));
             }
 
-            //insert sort practice!!!
-            for (int i = 1; i < orderedWeights.Count; i++)
+            //Order our objects by Fake weights unless they're equal we sort by string
+            //Referenced by this - https://www.techiedelight.com/sort-list-of-objects-csharp/
+
+            orderedWeights.Sort(delegate (Weight x, Weight y)
             {
-                int j = 0;
-                Weight value = orderedWeights[i];
-                for (j = i - 1; j >= 0; j--)
+                if (x.FakeWeight != y.FakeWeight)
                 {
-                    if (value.FakeWeight < orderedWeights[j].FakeWeight)
-                    {
-                        orderedWeights[j + 1] = orderedWeights[j];
-                    }
-                    else if (value.FakeWeight == orderedWeights[j].FakeWeight)
-                    {
-                        if (value.weight == orderedWeights[j].weight)
-                        {
-                            break;
-                        }
-
-
-
-                        //if something like 123 and 1234000
-                        else if (value.weight.Length != orderedWeights[j].weight.Length)
-                        {
-                            int count = 0;
-                            bool swap = false;
-                            //Check to see if there's in char differences between the digits to the length of lowest number
-                            while(count < value.weight.Length && count < orderedWeights[j].weight.Length && swap ==false)
-                            {
-                                if (value.weight[count] < orderedWeights[j].weight[count])
-                                {
-                                    orderedWeights[j + 1] = orderedWeights[j];
-                                    swap = true;
-                                }
-                                else
-                                {
-                                    count++;
-                                }
-                            }
-                            //if theres no difference the make sure larger digit is in front of value
-                            if (!swap)
-                            {
-                                if (int.Parse(value.weight) < int.Parse(orderedWeights[j].weight))
-                                {
-                                    orderedWeights[j + 1] = orderedWeights[j];
-                                }
-                            }
-
-                            //Lengths are equal and string are NOT the same and we need to check out place values indivdually
-                            else
-                            {
-                                //we pick one of the lengths, doensn't matter because they're the same
-                                for(int k = 0; i < value.weight.Length; k++)
-                                {
-                                    if(value.weight[k] < orderedWeights[j].weight[k])
-                                    {
-                                        orderedWeights[j + 1] = orderedWeights[j];
-                                        break;
-                                    }
-                                    
-                                }
-                            }
-
-                        }
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    return x.FakeWeight.CompareTo(y.FakeWeight);
                 }
-                orderedWeights[j + 1] = value;
+                else
+                {
+                    return x.weight.CompareTo(y.weight);
+                }
+            });
 
-            }
+
 
 
             // Create String from sorted values
