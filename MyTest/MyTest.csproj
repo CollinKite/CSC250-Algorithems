@@ -18,6 +18,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CodeWars3\CodeWars3.csproj" />
     <ProjectReference Include="..\CodeWars4\CodeWars4.csproj" />
+    <ProjectReference Include="..\N Queens\N Queens.csproj" />
     <ProjectReference Include="..\SortingLibrary\SortingLibrary.csproj" />
   </ItemGroup>
 
