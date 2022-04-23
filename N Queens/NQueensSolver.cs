@@ -1,41 +1,41 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
+﻿using system;
+using system.collections.generic;
+using system.linq;
+using system.text;
+using system.threading.tasks;
 
-//namespace N_Queens
-//{
-//    public static class NQueensSolver
-//    {
-//        //Solution List
-//        private static int Steps = 0;
-//        public static void Go(int n)
-//        {
-//            int[,] Board = new int[n, n];
-//            int[] Queens = new int[n];
-//            SolveNQueens(n);
+namespace n_queens
+{
+    public static class nqueenssolver
+    {
+        //solution list
+        private static int steps = 0;
+        public static void go(int n)
+        {
+            int[,] board = new int[n, n];
+            int[] queens = new int[n];
+            solvenqueens(n);
 
-//        }
+        }
 
-//        public static void SolveNQueens(int row, )
-//        {
-//            if (!IsQueenSafe)
-//            {
+        public static void solvenqueens(int row, )
+        {
+            if (!isqueensafe)
+            {
 
-//                return;
-//            }
-//        }
+                return;
+            }
+        }
 
-//        public static bool IsQueenSafe()
-//        { 
-//            return false;
-//        }
-//    }
+        public static bool isqueensafe()
+        {
+            return false;
+        }
+    }
 
-//    public static class Solution
-//    {
-        
-//    }
+    public static class solution
+    {
 
-//}
+    }
+
+}
