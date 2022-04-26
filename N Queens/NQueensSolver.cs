@@ -47,7 +47,7 @@ namespace N_Queens
                     queens.Add(i);
                     Steps++;
                     SolveNQueens(queens, row + 1, n, solutions);
-                    //Remove queen from list
+                    //Remove queen from list if we don't return
                     queens.RemoveAt(queens.Count - 1);
                 }
             }
