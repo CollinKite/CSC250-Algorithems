@@ -11,7 +11,8 @@ namespace N_Queens
 
             Console.WriteLine("n=" + n);
             NQueensSolver.Go(n);
-            //print
         }
+
+        //ughhhh I already wrote the print method in the NQueensSolver class and I'm too lazy to move it here
     }
 }
