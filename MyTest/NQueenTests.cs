@@ -22,8 +22,11 @@ namespace MyTest
         [Test]
         public void TestIsSafeWithvalidQueen()
         {
-            List<int> pass = new List<int>{ 1, 3 };
-            bool result = NQueensSolver.IsQueenSafe(pass, 4, 0);
+            List<int> pass1 = new List<int>{ 1, 3 };
+            bool result1 = NQueensSolver.IsQueenSafe(pass1, 4, 0);
+            List<int> pass2 = new List<int> { 2, 1 };            
+            bool result2 = NQueensSolver.IsQueenSafe(pass2, 4, 3);
+            bool result = result1 == result2; //Both should be true
             Assert.IsTrue(result);
         }
     }

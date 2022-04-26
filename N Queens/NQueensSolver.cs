@@ -32,11 +32,10 @@ namespace N_Queens
         {
             // we hit the end of the board so we have a solution
             // save the queens and the amount of steps
-            Steps++;
             if (row == n)
             {
                 //add solution to list
-                solutions.Add((queens.ToArray(), Steps));
+                solutions.Add((queens.ToArray(), Steps)); //Convert to array, because I Initially setup the print with array
                 Steps = 0; //reset steps for next solution
                 return;
             }
