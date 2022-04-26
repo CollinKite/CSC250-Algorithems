@@ -9,6 +9,7 @@ namespace N_Queens
     public static class NQueensSolver
     {
         private static int Steps = 0;
+        private static int TotalSteps = 0;
         public static void Go(int n)
         {
             List<int> queens = new();
@@ -24,8 +25,9 @@ namespace N_Queens
             
             
             SolveNQueens(queens, 0, n, solutions);
-            Console.WriteLine("Total Solutions: " + solutions.Count);
             PrintSolutions(solutions);
+            Console.WriteLine("Total Solutions: " + solutions.Count);
+            Console.WriteLine("Total Steps: " + TotalSteps);
         }
 
         public static void SolveNQueens(List<int> queens, int row, int n, List<(int[], int)> solutions)
@@ -36,6 +38,7 @@ namespace N_Queens
             {
                 //add solution to list
                 solutions.Add((queens.ToArray(), Steps)); //Convert to array, because I Initially setup the print with array
+                TotalSteps += Steps;
                 Steps = 0; //reset steps for next solution
                 return;
             }
